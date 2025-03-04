@@ -38,6 +38,7 @@ taskipy = "1.14.0"
 start = "python -m bot"
 lint = "pre-commit run --all-files"
 precommit = "pre-commit install"
+test = "python -m unittest discover tests"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
