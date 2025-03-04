@@ -47,7 +47,7 @@ def check_words(guess: str, correct : str) -> tuple:
 
 def get_dictonary(length : int) -> dict|None:
     """"Returns a dict of every word of that given length."""
-    return ALL_WORDS_DICT[length]
+    return ALL_WORDS_DICT.get(length, None)
 
 class Wordle(commands.Cog):
     """Cog for the Wordle game."""
