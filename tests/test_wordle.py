@@ -2,39 +2,6 @@ import unittest
 
 from bot.exts.fun.wordle import CORRECT, HALF_CORRECT, WRONG, check_words, get_dictonary
 
-"""
-from tests.helpers import MockBot, MockContext
-
-from bot.cogs import bot
-
-
-class TestWordle(unittest.TestCase):
-    def test_echo_command_correctly_echoes_arguments(self) -> None:
-        Test if the `!echo <text>` command correctly echoes the content.
-        mocked_bot = MockBot()
-        bot_cog = bot.Bot(mocked_bot)
-
-        mocked_context = MockContext()
-
-        text = "Hello! This should be echoed!"
-
-        asyncio.run(bot_cog.echo_command.callback(bot_cog, mocked_context, text=text))
-
-        mocked_context.send.assert_called_with(text)
-
-    def setUp(self):
-        self.bot = Bot(command_prefix=".")
-        self.bot.add_cog(Wordle(self.bot))
-
-    @patch("bot.utils.commands.Context")
-    async def test_create_embed(self, mock_context):
-
-        ctx = mock_context.return_value
-        ctx.send = AsyncMock()
-        await ctx.send(".wordle")
-
-"""
-
 
 class TestCheckWordsMethod(unittest.TestCase):
     """Test the check_words function."""
@@ -75,14 +42,12 @@ class TestDictonary(unittest.TestCase):
         """Test to determine that words are invalid using the dictionary."""
         self.assertFalse("hello" in get_dictonary(4))
         self.assertFalse("abcdefgh" in get_dictonary(len("abcdefgh")))
-        #self.assertFalse("ö" in get_dictonary(1)) 
-        #get_dictonary(1) does not exists for some reason making this fail
-    '''
+        
     def test_no_dictonary(self) -> None:
         """Test that no dictonary exists."""
         self.assertEqual(None, get_dictonary(123))
         self.assertEqual(None, get_dictonary(-1))
-    '''
+    
     # get dictionary seems to error rather tahn return None when is does not exist
 
 if __name__ == "__main__":
